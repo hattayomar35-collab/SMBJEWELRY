@@ -1,0 +1,84 @@
+body{
+margin:0;
+font-family:Arial;
+background:black;
+color:white;
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+.nav{
+display:flex;
+justify-content:space-between;
+padding:20px;
+background:rgba(0,0,0,0.8);
+position:sticky;
+top:0;
+z-index:10;
+}
+.nav a{
+color:gold;
+margin:0 10px;
+text-decoration:none;
+font-weight:bold;
+}
+.nav a:hover{color:white;}
+
+/* HERO */
+.hero{
+height:90vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+position:relative;
+background:linear-gradient(#000,#111);
+}
+.hero h2{
+font-size:60px;
+background:linear-gradient(90deg,gold,#fff);
+-webkit-background-clip:text;
+color:transparent;
+animation:fadeUp 1.5s ease;
+}
+.hero p{opacity:0.8;margin:10px;animation:fadeUp 2s ease;}
+.btn{
+margin-top:20px;padding:12px 25px;background:gold;color:black;border-radius:10px;text-decoration:none;font-weight:bold;transition:.4s;
+}
+.btn:hover{transform:scale(1.1);box-shadow:0 0 20px gold;}
+
+/* FISH ANIMATION */
+.fish{
+position:absolute;width:80px;animation:swim 12s linear infinite;
+}
+@keyframes swim{
+0%{left:-100px;}
+50%{left:110%;}
+100%{left:-100px;}
+}
+@keyframes fadeUp{
+from{opacity:0; transform:translateY(40px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+/* PRODUCTS */
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+padding:40px;
+}
+.card{
+background:#111;padding:20px;border-radius:20px;text-align:center;transition:.3s;opacity:0;transform:scale(0.9);
+}
+.card.show{opacity:1;transform:scale(1);}
+.card:hover{transform:scale(1.05);box-shadow:0 0 20px gold;}
+.card img{width:100%;border-radius:15px;}
+
+/* VIDEO */
+.videos video{
+width:90%;
+max-width:900px;
+border-radius:15px;
+display:block;margin:50px auto;
+}
