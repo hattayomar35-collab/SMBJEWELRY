@@ -100,9 +100,10 @@ body{
   border-radius:20px;
   text-align:center;
   transition:.5s;
-  opacity:0; /* سنجعلها تظهر بالانيميشن */
+  opacity:0;
   transform:translateY(40px) scale(0.95);
   box-shadow:0 0 15px rgba(255,215,0,0.1);
+  flex-shrink:0; /* مهم عند السلايدر */
 }
 
 .card.show{
@@ -149,9 +150,20 @@ body{
   transform:translateY(0);
 }
 
-/* RESPONSIVE */
+/* RESPONSIVE - الهواتف */
 @media screen and (max-width:600px){
   .hero h2{font-size:40px;}
-  .card img{height:180px;}
-  .products{padding:30px 20px; gap:20px;}
+  .card img{height:150px;}
+  .products{
+    display:flex;
+    overflow-x:auto;
+    gap:15px;
+    padding:30px 15px;
+  }
+  .card{
+    min-width:180px;
+    flex:0 0 auto;
+  }
+  /* إخفاء scroll bar للهواتف */
+  .products::-webkit-scrollbar{display:none;}
 }
