@@ -12,16 +12,23 @@ body{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:20px;
+  padding:15px 20px;
   background:rgba(0,0,0,0.85);
   position:sticky;
   top:0;
   z-index:100;
   backdrop-filter:blur(6px);
 }
+.nav .logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
 .nav .logo img{
-  width:120px;
+  width:100px;
+  max-width:100%;
   height:auto;
+  object-fit:contain;
 }
 .nav a{
   color:gold;
@@ -51,6 +58,7 @@ body{
   transform:translate(-50%, -50%);
   text-align:center;
   color:white;
+  padding:0 10px;
 }
 .overlay-text h1{
   font-size:60px;
@@ -62,7 +70,7 @@ body{
 .overlay-text p{
   font-size:22px;
   margin:10px 0;
-  opacity:0.8;
+  opacity:0.85;
 }
 .overlay-text .btn{
   margin-top:20px;
@@ -157,6 +165,8 @@ body{
   object-fit:cover;
   border-radius:15px;
   margin-bottom:10px;
+  display:block;
+  loading:lazy;
 }
 .card h3{
   margin:10px 0;
@@ -181,11 +191,12 @@ body{
 
 /* ===== VIDEO PAGE ===== */
 .videos video{
-  width:90%;
+  width:100%;
   max-width:900px;
   border-radius:15px;
   display:block;
   margin:50px auto;
+  height:auto;
 }
 
 /* ===== SCROLL ANIMATION ===== */
