@@ -1,15 +1,10 @@
-/* ===== RTL & النصوص ===== */
-html{
-  direction: rtl;
-}
-
+/* ===== GENERAL ===== */
 body{
   margin:0;
   font-family:Arial, sans-serif;
   background:#0b0b0b;
   color:white;
   overflow-x:hidden;
-  text-align:right;
 }
 
 /* ===== NAVBAR ===== */
@@ -25,7 +20,7 @@ body{
   backdrop-filter:blur(6px);
 }
 .nav .logo img{
-  width:50px;
+  width:120px;
   height:auto;
 }
 .nav a{
@@ -37,38 +32,39 @@ body{
 }
 .nav a:hover{color:white;}
 
-/* ===== HERO / BANNER ===== */
+/* ===== HERO / MAIN BANNER ===== */
 .main-banner{
   position:relative;
   width:100%;
-  max-height:90vh;
+  height:90vh;
   overflow:hidden;
 }
 .main-banner img{
   width:100%;
-  height:90vh;
+  height:100%;
   object-fit:cover;
 }
-.main-banner .overlay-text{
+.overlay-text{
   position:absolute;
   top:50%;
   left:50%;
-  transform:translate(-50%,-50%);
+  transform:translate(-50%, -50%);
   text-align:center;
   color:white;
 }
-.main-banner h1{
+.overlay-text h1{
   font-size:60px;
   background:linear-gradient(90deg,gold,#fff);
   -webkit-background-clip:text;
   color:transparent;
   margin:0;
 }
-.main-banner p{
+.overlay-text p{
   font-size:22px;
-  margin:15px 0;
+  margin:10px 0;
+  opacity:0.8;
 }
-.main-banner .btn{
+.overlay-text .btn{
   margin-top:20px;
   padding:12px 25px;
   background:gold;
@@ -76,100 +72,12 @@ body{
   border-radius:10px;
   text-decoration:none;
   font-weight:bold;
-  transition:.4s;
   display:inline-block;
+  transition:.4s;
 }
-.main-banner .btn:hover{
+.overlay-text .btn:hover{
   transform:scale(1.1);
   box-shadow:0 0 20px gold;
-}
-
-/* ===== ABOUT SMB ===== */
-.about{
-  max-width:1100px;
-  margin:50px auto;
-  padding:0 20px;
-}
-.about h2{
-  font-size:32px;
-  margin-bottom:15px;
-  color:gold;
-}
-.about h3{
-  font-size:22px;
-  margin-top:25px;
-}
-.about p, .about li, .about .quote{
-  line-height:1.6;
-  margin:10px 0;
-}
-.about ul{
-  list-style-type:none;
-  padding:0;
-}
-.about li::before{
-  content:"• ";
-  color:gold;
-}
-.about .quote{
-  font-style:italic;
-  color:#ffdc73;
-  margin-top:20px;
-  text-align:center;
-}
-
-/* ===== PRODUCTS GRID ===== */
-.products{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:30px;
-  padding:50px 40px;
-  max-width:1400px;
-  margin:auto;
-}
-.card{
-  background:#111;
-  padding:20px;
-  border-radius:20px;
-  text-align:center;
-  transition:.5s;
-  opacity:0;
-  transform:translateY(40px) scale(0.95);
-  box-shadow:0 0 15px rgba(255,215,0,0.1);
-  flex-shrink:0;
-}
-.card.show{
-  opacity:1;
-  transform:translateY(0) scale(1);
-}
-.card:hover{
-  transform:translateY(-8px) scale(1.05);
-  box-shadow:0 0 30px gold;
-}
-.card img{
-  width:100%;
-  height:200px;
-  object-fit:cover;
-  border-radius:15px;
-  margin-bottom:10px;
-}
-.card h3{
-  margin:10px 0;
-  font-size:18px;
-  color:gold;
-}
-.card .btn{
-  display:inline-block;
-  margin-top:10px;
-}
-
-/* ===== VIDEO PAGE ===== */
-.videos video{
-  width:90%;
-  max-width:900px;
-  border-radius:15px;
-  display:block;
-  margin:50px auto;
 }
 
 /* ===== FISH ANIMATION ===== */
@@ -185,6 +93,101 @@ body{
   100%{left:-120px;}
 }
 
+/* ===== ABOUT SECTION ===== */
+.about{
+  max-width:1000px;
+  margin:60px auto;
+  padding:0 20px;
+  text-align:center;
+}
+.about h2{
+  font-size:32px;
+  margin-bottom:20px;
+  color:gold;
+}
+.about h3{
+  font-size:24px;
+  margin:20px 0 10px 0;
+}
+.about p{
+  line-height:1.6;
+  margin:15px 0;
+}
+.about ul{
+  list-style:none;
+  padding:0;
+  margin:10px 0;
+}
+.about ul li{
+  margin:10px 0;
+  text-align:right;
+}
+.about .quote{
+  font-style:italic;
+  color:#ffd700;
+  margin-top:30px;
+}
+
+/* ===== PRODUCTS GRID ===== */
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+  grid-auto-rows: 320px;
+  gap:25px;
+  padding:50px 40px;
+  max-width:1400px;
+  margin:auto;
+}
+.card{
+  background:#111;
+  padding:15px;
+  border-radius:20px;
+  text-align:center;
+  transition:.4s;
+  opacity:1;
+  transform:scale(1);
+  box-shadow:0 0 15px rgba(255,215,0,0.1);
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+.card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:15px;
+  margin-bottom:10px;
+}
+.card h3{
+  margin:10px 0;
+  font-size:18px;
+  color:gold;
+}
+.card .btn{
+  margin-top:10px;
+  padding:10px 15px;
+  background:gold;
+  color:black;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:bold;
+  display:inline-block;
+  transition:.3s;
+}
+.card:hover{
+  transform:translateY(-6px) scale(1.03);
+  box-shadow:0 0 30px gold;
+}
+
+/* ===== VIDEO PAGE ===== */
+.videos video{
+  width:90%;
+  max-width:900px;
+  border-radius:15px;
+  display:block;
+  margin:50px auto;
+}
+
 /* ===== SCROLL ANIMATION ===== */
 .fade-in{
   opacity:0;
@@ -198,28 +201,37 @@ body{
 
 /* ===== FOOTER ===== */
 .footer{
-  background:#111;
-  padding:20px 0;
   text-align:center;
-  font-size:14px;
-  color:#ccc;
+  padding:20px;
+  background:#111;
+  color:gold;
+  margin-top:50px;
 }
 
-/* ===== RESPONSIVE - الهواتف ===== */
-@media screen and (max-width:600px){
-  .main-banner h1{font-size:40px;}
-  .main-banner p{font-size:18px;}
-  .card img{height:150px;}
+/* ===== RESPONSIVE ===== */
+@media screen and (max-width:1024px){
+  .overlay-text h1{font-size:50px;}
+  .overlay-text p{font-size:20px;}
+}
+@media screen and (max-width:768px){
+  .overlay-text h1{font-size:40px;}
+  .overlay-text p{font-size:18px;}
+  .card img{height:160px;}
+  .products{grid-auto-rows:280px; gap:20px;}
+}
+@media screen and (max-width:480px){
   .products{
     display:flex;
     overflow-x:auto;
     gap:15px;
-    padding:30px 15px;
+    padding:20px 10px;
   }
   .card{
     min-width:180px;
     flex:0 0 auto;
+    height:auto;
   }
-  /* إخفاء scroll bar للهواتف */
   .products::-webkit-scrollbar{display:none;}
+  .overlay-text h1{font-size:30px;}
+  .overlay-text p{font-size:16px;}
 }
