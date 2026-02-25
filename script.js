@@ -1,71 +1,109 @@
-// اللغة الافتراضية
-let lang = 'ar';
+// ===== زر تغيير اللغة =====
 
-// زر اللغة ثابت
-const langBtn = document.createElement('button');
-langBtn.textContent = 'EN/AR';
-langBtn.style.position = 'fixed';
-langBtn.style.top = '20px';
-langBtn.style.right = '20px';
-langBtn.style.padding = '10px 15px';
-langBtn.style.background = 'gold';
-langBtn.style.border = 'none';
-langBtn.style.borderRadius = '10px';
-langBtn.style.cursor = 'pointer';
-langBtn.style.zIndex = '999';
+let lang = "ar";
+
+const langBtn = document.createElement("button");
+
+langBtn.innerHTML = "EN";
+
+langBtn.className = "lang-btn";
+
 document.body.appendChild(langBtn);
 
-// النصوص لكل صفحة
+
+// ===== النصوص =====
+
 const translations = {
-  ar: {
-    navbar: ['الرئيسية', 'المتجر', 'فيديوهات'],
-    overlayH1: 'SMB Jewelry',
-    overlayP: 'سر الفخامة الملكية',
-    productsTitle: 'أجمل تصاميم المجوهرات الفاخرة',
-    videosTitle: 'فيديوهات SMB',
-    products: ['نور القمر','لمسة حب','أميرة الليل','عهد العشق','نجمة الأمل','سر الجمال','همس الحب','شمس العشق','إشراقة القلب','رقة الليل','خاطفة الأبصار','تحفة الملك']
-  },
-  en: {
-    navbar: ['Home','Products','Videos'],
-    overlayH1: 'SMB Jewelry',
-    overlayP: 'The secret of royal luxury',
-    productsTitle: 'The Most Beautiful Luxury Jewelry Designs',
-    videosTitle: 'SMB Videos',
-    products: ['Moonlight','Touch of Love','Night Princess','Pledge of Love','Star of Hope','Secret of Beauty','Whisper of Love','Sun of Passion','Heart Shine','Night Elegance','Eye Catcher','Royal Masterpiece']
-  }
+
+ar:{
+
+nav1:"الرئيسية",
+
+nav2:"المتجر",
+
+nav3:"فيديوهات",
+
+productsTitle:"أجمل تصاميم المجوهرات الفاخرة",
+
+btn:"طلب عبر واتساب"
+
+},
+
+en:{
+
+nav1:"Home",
+
+nav2:"Products",
+
+nav3:"Videos",
+
+productsTitle:"Luxury Jewelry Collections",
+
+btn:"Order on WhatsApp"
+
+}
+
 };
 
-// تحديث اللغة
-function updateLanguage(){
-  const t = translations[lang];
-  document.querySelectorAll('header nav a').forEach((link,i)=>{if(t.navbar[i]) link.textContent=t.navbar[i];});
-  const overlayH1=document.querySelector('.overlay-text h1');
-  const overlayP=document.querySelector('.overlay-text p');
-  if(overlayH1) overlayH1.textContent=t.overlayH1;
-  if(overlayP) overlayP.textContent=t.overlayP;
-  const productsTitle=document.querySelector('.products-title p');
-  if(productsTitle) productsTitle.textContent=t.productsTitle;
-  document.querySelectorAll('.card h3').forEach((name,i)=>{if(t.products[i]) name.textContent=t.products[i];});
-  const videosTitle=document.querySelector('.videos-title p');
-  if(videosTitle) videosTitle.textContent=t.videosTitle;
-  document.documentElement.setAttribute('dir', lang==='ar'?'rtl':'ltr');
-}
 
-langBtn.addEventListener('click', ()=>{
-  lang = lang==='ar'?'en':'ar';
-  updateLanguage();
+
+// ===== تغيير اللغة =====
+
+function updateLang(){
+
+const t = translations[lang];
+
+
+// Navbar
+
+const nav = document.querySelectorAll("nav a");
+
+if(nav[0]) nav[0].textContent = t.nav1;
+
+if(nav[1]) nav[1].textContent = t.nav2;
+
+if(nav[2]) nav[2].textContent = t.nav3;
+
+
+// عنوان المنتجات
+
+const title = document.querySelector(".products-title p");
+
+if(title) title.textContent = t.productsTitle;
+
+
+// أزرار واتساب
+
+const buttons = document.querySelectorAll(".btn");
+
+buttons.forEach(b=>{
+b.textContent = t.btn;
 });
 
-// ظهور المنتجات مع أنيميشن
-const cards=document.querySelectorAll(".card");
-window.addEventListener("load",()=>{cards.forEach(c=>c.classList.add("show"));});
 
-// السمك المتحرك
-function createFish(){
-  const fish=document.createElement("div");
-  fish.classList.add("fish");
-  fish.style.top=Math.random()*80+"%";
-  document.body.appendChild(fish);
-  setTimeout(()=>fish.remove(),15000);
+// الاتجاه
+
+document.documentElement.dir = lang=="ar" ? "rtl":"ltr";
+
 }
-setInterval(createFish,3000);
+
+
+
+
+// ===== زر التغيير =====
+
+langBtn.onclick = ()=>{
+
+lang = lang=="ar" ? "en":"ar";
+
+langBtn.innerHTML = lang=="ar" ? "EN":"AR";
+
+updateLang();
+
+};
+
+
+
+// ===== تشغيل أول مرة =====
+
+updateLang();
