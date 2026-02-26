@@ -1,24 +1,15 @@
-// ===== تشغيل بعد تحميل الصفحة بالكامل =====
+// ===== تشغيل أنيميشن عند تحميل الصفحة =====
 window.addEventListener("DOMContentLoaded", () => {
 
-  // جميع العناصر التي نريد تطبيق أنيميشن لها
-  const fadeElements = document.querySelectorAll(
+  // جميع العناصر المهمة للأنيميشن
+  const elements = document.querySelectorAll(
     "header, .main-banner, .overlay-text, section, .card, .video-card, footer"
   );
 
-  // إعداد الأنيميشن مبدئيًا
-  fadeElements.forEach(el => {
-    el.style.opacity = 0;
-    el.style.transform = "translateY(20px)";
-    el.style.transition = "opacity 0.8s ease, transform 0.8s ease";
+  // إضافة class مع تأخير بسيط لكل عنصر
+  elements.forEach((el, index) => {
+    el.style.animationDelay = `${index * 0.1}s`;
+    el.classList.add("fade-in");
   });
-
-  // تأخير قصير قبل اظهار العناصر تدريجيًا
-  setTimeout(() => {
-    fadeElements.forEach(el => {
-      el.style.opacity = 1;
-      el.style.transform = "translateY(0)";
-    });
-  }, 100);
 
 });
