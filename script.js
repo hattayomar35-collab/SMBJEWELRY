@@ -1,37 +1,24 @@
-// ===== أنيميشن تحميل الصفحة =====
-window.addEventListener("load", () => {
-  // جعل الجسم ظاهر
-  document.body.style.opacity = "1";
+// ===== تشغيل بعد تحميل الصفحة بالكامل =====
+window.addEventListener("DOMContentLoaded", () => {
 
-  // ظهور البانر
-  const banner = document.querySelector(".main-banner");
-  if (banner) {
-    banner.style.opacity = 1;
-    banner.style.transform = "translateY(0)";
-  }
+  // جميع العناصر التي نريد تطبيق أنيميشن لها
+  const fadeElements = document.querySelectorAll(
+    "header, .main-banner, .overlay-text, section, .card, .video-card, footer"
+  );
 
-  // ظهور عنوان المنتجات
-  const productsTitle = document.querySelector(".products-title");
-  if (productsTitle) {
-    productsTitle.style.opacity = 1;
-    productsTitle.style.transform = "translateY(0)";
-  }
-
-  // ظهور كروت المنتجات
-  const cards = document.querySelectorAll(".card");
-  cards.forEach((card, index) => {
-    setTimeout(() => {
-      card.style.opacity = 1;
-      card.style.transform = "translateY(0)";
-    }, 200 + index * 100);
+  // إعداد الأنيميشن مبدئيًا
+  fadeElements.forEach(el => {
+    el.style.opacity = 0;
+    el.style.transform = "translateY(20px)";
+    el.style.transition = "opacity 0.8s ease, transform 0.8s ease";
   });
 
-  // ظهور الفيديوهات
-  const videos = document.querySelectorAll(".video-card");
-  videos.forEach((video, index) => {
-    setTimeout(() => {
-      video.style.opacity = 1;
-      video.style.transform = "translateY(0)";
-    }, 500 + index * 100);
-  });
+  // تأخير قصير قبل اظهار العناصر تدريجيًا
+  setTimeout(() => {
+    fadeElements.forEach(el => {
+      el.style.opacity = 1;
+      el.style.transform = "translateY(0)";
+    });
+  }, 100);
+
 });
