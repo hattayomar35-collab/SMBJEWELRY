@@ -1,17 +1,18 @@
-// ===== الترجمة التلقائية حسب لغة المتصفح =====
+// ===== تحديد اللغة تلقائيًا حسب لغة المتصفح =====
 let lang = navigator.language.startsWith("ar") ? "ar" : "en";
 
-// ===== تحديث النصوص تلقائياً حسب الـ data-ar و data-en =====
+// ===== دالة تحديث اللغة =====
 function updateLang() {
-  // تغيير اتجاه الصفحة
-  document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
-
-  // كل العناصر التي تحتوي على data-ar و data-en
+  // جميع العناصر التي تحتوي على data-ar و data-en
   const elements = document.querySelectorAll("[data-ar][data-en]");
+
   elements.forEach(el => {
-    el.textContent = lang === "ar" ? el.getAttribute("data-ar") : el.getAttribute("data-en");
+    el.textContent = el.getAttribute(`data-${lang}`);
   });
+
+  // ضبط اتجاه الصفحة
+  document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
 }
 
-// ===== تشغيل أول مرة =====
+// ===== تشغيل الترجمة تلقائيًا عند تحميل الصفحة =====
 updateLang();
