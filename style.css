@@ -3,28 +3,11 @@ body {
   margin: 0;
   font-family: 'Playfair Display','Roboto',serif;
   color: white;
-  background: #000;
+  background: #000 url('bg-gold-lines.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   overflow-x: hidden;
-  position: relative;
-}
-
-/* ===== DIAMOND BACKGROUND ANIMATION ===== */
-.diamond-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('diamond.png') repeat;
-  background-size: 50px 50px;
-  animation: moveDiamonds 20s linear infinite;
-  z-index: 0;
-  opacity: 0.2;
-}
-
-@keyframes moveDiamonds {
-  0% {background-position: 0 0;}
-  100% {background-position: 1000px 1000px;}
 }
 
 /* ===== NAVBAR ===== */
@@ -33,11 +16,18 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
-  background: gold;
+  background: rgba(0,0,0,0.95);
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 15px rgba(255,215,0,0.5);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 15px rgba(255,215,0,0.2);
+}
+
+.nav .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .nav .logo img {
@@ -46,19 +36,23 @@ body {
 }
 
 .nav a {
+  color: gold;
   margin: 0 10px;
-  font-size: 22px;
   text-decoration: none;
-  color: black;
-  transition: transform 0.3s, color 0.3s;
+  font-weight: bold;
+  transition: .3s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .nav a:hover {
-  transform: scale(1.3);
   color: white;
+  text-shadow: 0 0 10px gold;
 }
 
 /* ===== HERO ===== */
+
 .main-banner {
   position: relative;
   width: 100%;
@@ -71,17 +65,30 @@ body {
   height: 100%;
   object-fit: cover;
   filter: brightness(0.6);
-  position: relative;
-  z-index: 1;
 }
 
+/* النص في الوسط */
+
 .overlay-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  text-align: center;
-  z-index: 2;
+
+position: absolute;
+
+top:50%;
+
+left:50%;
+
+transform:translate(-50%,-50%);
+
+text-align:center;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+justify-content:center;
+
 }
 
 .overlay-text h1 {
@@ -95,34 +102,107 @@ body {
   font-size: 22px;
 }
 
-.rotate-btn {
-  margin-top: 20px;
-  padding: 20px;
-  background: gold;
-  color: black;
-  border-radius: 50%;
-  display: inline-block;
-  font-weight: bold;
-  box-shadow: 0 0 15px gold;
-  animation: rotateBtn 5s linear infinite;
+
+/* ===== زر فاخر دائري ===== */
+
+.overlay-text .btn{
+
+margin-top:30px;
+
+width:140px;
+height:140px;
+
+border-radius:50%;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+text-align:center;
+
+font-size:14px;
+
+background:linear-gradient(45deg,#FFD700,#b89600);
+
+color:black;
+
+font-weight:bold;
+
+text-decoration:none;
+
+box-shadow:
+0 0 20px gold,
+0 0 40px rgba(255,215,0,0.4);
+
+transition:0.4s;
+
+animation:rotateBtn 8s linear infinite;
+
 }
 
-@keyframes rotateBtn {
-  0% {transform: rotate(0deg);}
-  100% {transform: rotate(360deg);}
+
+/* دوران */
+
+@keyframes rotateBtn{
+
+from{
+
+transform:rotate(0deg);
+
 }
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+
+/* تأثير hover */
+
+.overlay-text .btn:hover{
+
+animation-play-state:paused;
+
+transform:scale(1.1);
+
+box-shadow:
+0 0 30px gold,
+0 0 60px gold;
+
+}
+
 
 /* ===== PRODUCTS ===== */
-.products-title {text-align:center; margin-top:40px; margin-bottom:20px;}
-.products-title h1 {font-size:45px; color:gold;}
-.products-title p {color:#ccc;}
 
-.products {max-width:1300px; margin:auto; padding:20px;}
+.products-title {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.products-title h1 {
+  font-size: 45px;
+  color: gold;
+}
+
+.products-title p {
+  color: #ccc;
+}
+
+.products {
+  max-width: 1300px;
+  margin: auto;
+  padding: 20px;
+}
+
 .product-group {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px,1fr));
   gap: 25px;
-  margin-bottom:40px;
+  margin-bottom: 40px;
 }
 
 .card {
@@ -130,7 +210,7 @@ body {
   padding: 15px;
   border-radius: 20px;
   text-align: center;
-  transition: transform 0.5s, box-shadow 0.5s;
+  transition: .4s;
   box-shadow: 0 0 20px rgba(255,215,0,0.2);
 }
 
@@ -141,7 +221,9 @@ body {
   border-radius: 15px;
 }
 
-.card h3 {color: gold;}
+.card h3 {
+  color: gold;
+}
 
 .card .btn {
   margin-top: 10px;
@@ -155,20 +237,100 @@ body {
 }
 
 .card:hover {
-  transform: translateY(-10px) scale(1.05);
+  transform: translateY(-10px);
   box-shadow: 0 0 40px gold;
 }
 
+
+/* ===== VIDEOS ===== */
+
+.video-group {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.video-card {
+  text-align: center;
+}
+
+.video-card video {
+  width: 100%;
+  max-width: 280px;
+  border-radius: 20px;
+  border: 2px solid gold;
+  box-shadow: 0 0 20px gold;
+}
+
+.video-card p {
+  color: gold;
+}
+
+
 /* ===== FOOTER ===== */
-.footer {text-align:center; padding:20px; background:#111; color:gold; margin-top:50px;}
-.footer-socials {margin-top:10px; display:flex; justify-content:center; gap:15px;}
-.footer-socials a {font-size:24px; color:gold; transition: transform 0.3s, color 0.3s;}
-.footer-socials a:hover {color:white; transform:scale(1.3);}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #111;
+  color: gold;
+  margin-top: 50px;
+}
+
 
 /* ===== ANIMATION ===== */
-.fade-in {opacity:0; transform:translateY(20px); animation: fadeInUp 0.8s ease forwards;}
-@keyframes fadeInUp {to {opacity:1; transform:translateY(0);}}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+
+to {
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
 
 /* ===== MOBILE ===== */
-@media(max-width:768px){.overlay-text h1{font-size:40px}.product-group{grid-template-columns:repeat(2,1fr);gap:15px}.card{padding:10px}.card img{height:140px}}
-@media(max-width:480px){.overlay-text h1{font-size:30px}.product-group{grid-template-columns:repeat(2,1fr)}.card img{height:120px}}
+
+@media (max-width: 768px) {
+
+.overlay-text h1 { font-size:40px; }
+
+.product-group {
+
+grid-template-columns: repeat(2,1fr);
+
+gap:15px;
+
+}
+
+.card { padding:10px; }
+
+.card img { height:140px; }
+
+}
+
+
+@media (max-width: 480px) {
+
+.overlay-text h1 { font-size:30px; }
+
+.product-group {
+
+grid-template-columns: repeat(2,1fr);
+
+}
+
+.card img { height:120px; }
+
+}
