@@ -16,12 +16,17 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
-  background: rgba(0,0,0,0.95);
+
+  /* اللون الذهبي */
+  background: gold;
+
   position: sticky;
   top: 0;
   z-index: 100;
+
   backdrop-filter: blur(8px);
-  box-shadow: 0 2px 15px rgba(255,215,0,0.2);
+
+  box-shadow: 0 2px 15px rgba(0,0,0,0.3);
 }
 
 .nav .logo {
@@ -35,21 +40,34 @@ body {
   height: auto;
 }
 
+/* الكتابة سوداء */
 .nav a {
-  color: gold;
+  color: black;
+
   margin: 0 10px;
   text-decoration: none;
   font-weight: bold;
+
   transition: .3s;
+
   display: flex;
   align-items: center;
   gap: 5px;
 }
 
 .nav a:hover {
+
   color: white;
-  text-shadow: 0 0 10px gold;
+
 }
+
+/* اسم الشركة */
+.brand-name{
+color:black;
+font-weight:bold;
+font-size:20px;
+}
+
 
 /* ===== HERO ===== */
 .main-banner {
