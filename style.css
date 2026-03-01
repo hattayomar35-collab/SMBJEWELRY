@@ -1,4 +1,5 @@
-/* ===== GENERAL ===== */
+/* ===== GENERAL START ===== */
+
 body {
   margin: 0;
   font-family: 'Playfair Display','Roboto',serif;
@@ -10,14 +11,18 @@ body {
   overflow-x: hidden;
 }
 
-/* ===== NAVBAR ===== */
+/* ===== GENERAL END ===== */
+
+
+
+/* ===== NAVBAR START ===== */
+
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
 
-  /* اللون الذهبي */
   background: gold;
 
   position: sticky;
@@ -40,8 +45,8 @@ body {
   height: auto;
 }
 
-/* الكتابة سوداء */
 .nav a {
+
   color: black;
 
   margin: 0 10px;
@@ -61,182 +66,385 @@ body {
 
 }
 
-/* اسم الشركة */
 .brand-name{
+
 color:black;
+
 font-weight:bold;
+
 font-size:20px;
+
 }
 
+/* ===== NAVBAR END ===== */
 
-/* ===== HERO ===== */
+
+
+
+/* ===== HERO START ===== */
+
 .main-banner {
+
   position: relative;
   width: 100%;
   height: 90vh;
   overflow: hidden;
+
 }
 
 .main-banner img {
+
   width: 100%;
   height: 100%;
   object-fit: cover;
+
   filter: brightness(0.6);
+
 }
 
 .overlay-text {
+
   position: absolute;
   top: 50%;
   left: 50%;
+
   transform: translate(-50%,-50%);
+
   text-align: center;
+
 }
 
 .overlay-text h1 {
+
   font-size: 60px;
+
   background: linear-gradient(90deg, gold, #fff);
+
   -webkit-background-clip: text;
+
   color: transparent;
+
 }
 
 .overlay-text p {
+
   font-size: 22px;
+
 }
 
 .overlay-text .btn {
   margin-top: 20px;
-  padding: 12px 25px;
+  padding: 15px 15px;       /* نفس البعد عموديًا وأفقيًا */
   background: gold;
   color: black;
-  border-radius: 10px;
+  border-radius: 50%;       /* دائرة كاملة */
   text-decoration: none;
   font-weight: bold;
   display: inline-block;
+  width: 100px;             /* يمكنك تعديل الحجم */
+  height: 100px;            /* لتكون دائرة مثالية */
+  line-height: 70px;        /* لضبط النص داخل الدائرة عموديًا */
+  text-align: center;
   box-shadow: 0 0 15px gold;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* ===== PRODUCTS ===== */
+.overlay-text .btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px gold;
+}
+
+/* ===== HERO END ===== */
+
+
+
+
+/* ===== PRODUCTS START ===== */
+
 .products-title {
+
   text-align: center;
+
   margin-top: 40px;
+
   margin-bottom: 20px;
+
 }
 
 .products-title h1 {
+
   font-size: 45px;
+
   color: gold;
+
 }
 
 .products-title p {
+
   color: #ccc;
+
 }
+
+
 
 .products {
+
   max-width: 1300px;
+
   margin: auto;
+
   padding: 20px;
+
 }
+
+
 
 .product-group {
+
   display: grid;
+
   grid-template-columns: repeat(auto-fit, minmax(230px,1fr));
+
   gap: 25px;
+
   margin-bottom: 40px;
+
 }
+
+
 
 .card {
+
   background: #111;
+
   padding: 15px;
+
   border-radius: 20px;
+
   text-align: center;
+
   transition: .4s;
+
   box-shadow: 0 0 20px rgba(255,215,0,0.2);
+
 }
+
+
 
 .card img {
+
   width: 100%;
+
   height: 200px;
+
   object-fit: cover;
+
   border-radius: 15px;
+
 }
+
+
 
 .card h3 {
+
   color: gold;
+
 }
+
+
 
 .card .btn {
+
   margin-top: 10px;
+
   padding: 10px 15px;
+
   background: gold;
+
   color: black;
+
   border-radius: 10px;
+
   text-decoration: none;
+
   display: inline-block;
+
   font-weight: bold;
+
 }
+
+
 
 .card:hover {
+
   transform: translateY(-10px);
+
   box-shadow: 0 0 40px gold;
+
 }
 
-/* ===== VIDEOS ===== */
+/* ===== PRODUCTS END ===== */
+
+
+
+
+/* ===== VIDEOS START ===== */
+
 .video-group {
+
   display: flex;
+
   justify-content: center;
+
   gap: 30px;
+
   flex-wrap: wrap;
+
 }
+
+
 
 .video-card {
+
   text-align: center;
+
 }
+
+
 
 .video-card video {
+
   width: 100%;
+
   max-width: 280px;
+
   border-radius: 20px;
+
   border: 2px solid gold;
+
   box-shadow: 0 0 20px gold;
+
 }
+
+
 
 .video-card p {
+
   color: gold;
+
 }
 
-/* ===== FOOTER ===== */
+/* ===== VIDEOS END ===== */
+
+
+
+
+/* ===== FOOTER START ===== */
+
 .footer {
+
   text-align: center;
+
   padding: 20px;
+
   background: #111;
+
   color: gold;
+
   margin-top: 50px;
+
 }
 
-/* ===== ANIMATION ===== */
+/* ===== FOOTER END ===== */
+
+
+
+
+/* ===== ANIMATION START ===== */
+
 .fade-in {
+
   opacity: 0;
+
   transform: translateY(20px);
+
   animation: fadeInUp 0.8s ease forwards;
+
 }
+
+
 
 @keyframes fadeInUp {
+
   to {
+
     opacity: 1;
+
     transform: translateY(0);
+
   }
+
 }
 
-/* ===== MOBILE ===== */
+/* ===== ANIMATION END ===== */
+
+
+
+
+/* ===== MOBILE START ===== */
+
 @media (max-width: 768px) {
-  .overlay-text h1 { font-size: 40px; }
-  .product-group { grid-template-columns: repeat(2,1fr); gap: 15px; }
-  .card { padding: 10px; }
-  .card img { height: 140px; }
+
+  .overlay-text h1 {
+
+   font-size: 40px;
+
+  }
+
+  .product-group {
+
+   grid-template-columns: repeat(2,1fr);
+
+   gap: 15px;
+
+  }
+
+  .card {
+
+   padding: 10px;
+
+  }
+
+  .card img {
+
+   height: 140px;
+
+  }
+
 }
+
+
 
 @media (max-width: 480px) {
-  .overlay-text h1 { font-size: 30px; }
-  .product-group { grid-template-columns: repeat(2,1fr); }
-  .card img { height: 120px; }
+
+  .overlay-text h1 {
+
+   font-size: 30px;
+
+  }
+
+  .product-group {
+
+   grid-template-columns: repeat(2,1fr);
+
+  }
+
+  .card img {
+
+   height: 120px;
+
+  }
+
 }
+
+/* ===== MOBILE END ===== */
