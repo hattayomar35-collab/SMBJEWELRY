@@ -19,7 +19,7 @@ body {
 
 .nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* الشعار على جهة والأيقونات على الأخرى */
   align-items: center;
   padding: 10px 20px; /* تقليل الارتفاع */
   background: gold;
@@ -44,9 +44,10 @@ body {
 
 .nav nav {
   display: flex;
-  flex-direction: column; /* ترتيب الأيقونات عموديًا */
+  flex-direction: row; /* ترتيب الأيقونات أفقيًا */
   justify-content: center;
-  gap: 15px; /* مسافة بين كل أيقونة */
+  align-items: center;
+  gap: 25px; /* المسافة بين كل أيقونة */
 }
 
 .nav a {
@@ -71,7 +72,6 @@ body {
 }
 
 /* ===== NAVBAR END ===== */
-
 
 /* ===== HERO START ===== */
 
