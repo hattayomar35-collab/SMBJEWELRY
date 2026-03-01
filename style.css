@@ -131,27 +131,34 @@ font-size:20px;
   font-size: 22px;
 
 }
-
 .overlay-text .btn {
-  margin-top: 20px;
-  padding: 15px 15px;       /* نفس البعد عموديًا وأفقيًا */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;            /* حجم الزر */
+  height: 80px;           /* نفس العرض للحصول على دائرة */
   background: gold;
   color: black;
-  border-radius: 50%;       /* دائرة كاملة */
+  border-radius: 50%;  
   text-decoration: none;
   font-weight: bold;
-  display: inline-block;
-  width: 100px;             /* يمكنك تعديل الحجم */
-  height: 100px;            /* لتكون دائرة مثالية */
-  line-height: 70px;        /* لضبط النص داخل الدائرة عموديًا */
-  text-align: center;
   box-shadow: 0 0 15px gold;
+  font-size: 14px;        /* يمكن تكبير النص قليلًا */
   transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+  padding: 0;
+  cursor: pointer;
 }
 
 .overlay-text .btn:hover {
   transform: scale(1.1);
   box-shadow: 0 0 25px gold;
+}
+
+/* إذا أردت إضافة أيقونة داخل الزر */
+.overlay-text .btn i {
+  margin-right: 0; /* اضبط إذا يوجد نص بجانب الأيقونة */
+  font-size: 16px;
 }
 
 /* ===== HERO END ===== */
