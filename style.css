@@ -13,22 +13,20 @@ body {
 
 /* ===== GENERAL END ===== */
 
-
-
 /* ===== NAVBAR START ===== */
 
 .nav {
   display: flex;
-  justify-content: space-between; /* الشعار على جهة والأيقونات على الأخرى */
+  justify-content: space-between; /* الشعار على اليسار والأيقونات على اليمين */
   align-items: center;
-  padding: 10px 20px; /* تقليل الارتفاع */
+  padding: 8px 20px; /* تقليل الارتفاع */
   background: gold;
   position: sticky;
   top: 0;
   z-index: 100;
   backdrop-filter: blur(8px);
   box-shadow: 0 2px 15px rgba(0,0,0,0.3);
-  height: 60px; /* ارتفاع أصغر للشريط */
+  height: 50px; /* ارتفاع أصغر للشريط */
 }
 
 .nav .logo {
@@ -47,7 +45,7 @@ body {
   flex-direction: row; /* ترتيب الأيقونات أفقيًا */
   justify-content: center;
   align-items: center;
-  gap: 25px; /* المسافة بين كل أيقونة */
+  gap: 25px; /* المسافة بين الأيقونات */
 }
 
 .nav a {
