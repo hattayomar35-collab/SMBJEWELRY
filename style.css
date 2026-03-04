@@ -1,32 +1,28 @@
 /* ===== GENERAL START ===== */
-
 body {
   margin: 0;
   font-family: 'Playfair Display','Roboto',serif;
   color: white;
-  background: #000 url('bg-gold-lines.png');
+  background: #000 url('bg-gold-lines.png') no-repeat fixed;
   background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   overflow-x: hidden;
 }
-
 /* ===== GENERAL END ===== */
 
-/* ===== NAVBAR START ===== */
 
+/* ===== NAVBAR START ===== */
 .nav {
   display: flex;
-  justify-content: space-between; /* الشعار على اليسار والأيقونات على اليمين */
+  justify-content: space-between;
   align-items: center;
-  padding: 8px 20px; /* تقليل الارتفاع */
+  padding: 8px 20px;
   background: gold;
   position: sticky;
   top: 0;
   z-index: 100;
   backdrop-filter: blur(8px);
   box-shadow: 0 2px 15px rgba(0,0,0,0.3);
-  height: 50px; /* ارتفاع أصغر للشريط */
+  height: 50px;
 }
 
 .nav .logo {
@@ -36,426 +32,296 @@ body {
 }
 
 .nav .logo img {
-  width: 70px; /* تصغير شعار */
-  height: auto;
+  width: 70px;
 }
 
 .nav nav {
   display: flex;
-  flex-direction: row; /* ترتيب الأيقونات أفقيًا */
-  justify-content: center;
-  align-items: center;
-  gap: 25px; /* المسافة بين الأيقونات */
+  gap: 25px;
 }
 
 .nav a {
   color: black;
   text-decoration: none;
   font-weight: bold;
-  font-size: 20px; /* حجم الأيقونات */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-size: 20px;
   transition: .3s;
 }
 
-.nav a:hover {
-  color: white;
-}
+.nav a:hover { color: white; }
 
 .brand-name {
   color: black;
   font-weight: bold;
   font-size: 18px;
 }
-
 /* ===== NAVBAR END ===== */
 
+
 /* ===== HERO START ===== */
-
 .main-banner {
-
   position: relative;
   width: 100%;
   height: 90vh;
   overflow: hidden;
-
 }
 
 .main-banner img {
-
   width: 100%;
   height: 100%;
   object-fit: cover;
-
   filter: brightness(0.6);
-
 }
 
 .overlay-text {
-
   position: absolute;
   top: 50%;
   left: 50%;
-
   transform: translate(-50%,-50%);
-
   text-align: center;
-
 }
 
 .overlay-text h1 {
-
   font-size: 60px;
-
   background: linear-gradient(90deg, gold, #fff);
-
   -webkit-background-clip: text;
-
   color: transparent;
-
 }
 
-.overlay-text p {
+.overlay-text p { font-size: 22px; }
 
-  font-size: 22px;
-
-}
 .overlay-text .btn {
-
-  display: block;          /* مهم للتمركز */
-
-  width: 90px;             
-  height: 90px;            
-
-  line-height: 90px;       /* يجعل النص في وسط الدائرة */
-
-  margin: 25px auto;       /* يضع الزر في الوسط */
-
+  display: block;
+  width: 90px;
+  height: 90px;
+  line-height: 90px;
+  margin: 25px auto;
   background: gold;
   color: black;
-
   border-radius: 50%;
-
   text-decoration: none;
-
   font-weight: bold;
-
   box-shadow: 0 0 15px gold;
-
   font-size: 14px;
-
-  text-align: center;
-
-  transition: transform 0.3s, box-shadow 0.3s;
-
+  transition: 0.3s;
 }
 
 .overlay-text .btn:hover {
-
   transform: scale(1.1);
-
   box-shadow: 0 0 25px gold;
-
 }
-
-/* إذا أردت إضافة أيقونة داخل الزر */
-.overlay-text .btn i {
-  margin-right: 0; /* اضبط إذا يوجد نص بجانب الأيقونة */
-  font-size: 16px;
-}
-
 /* ===== HERO END ===== */
 
 
-
-
 /* ===== PRODUCTS START ===== */
-
 .products-title {
-
   text-align: center;
-
-  margin-top: 40px;
-
-  margin-bottom: 20px;
-
+  margin: 40px 0 20px;
 }
 
 .products-title h1 {
-
   font-size: 45px;
-
   color: gold;
-
 }
 
-.products-title p {
-
-  color: #ccc;
-
-}
-
-
+.products-title p { color: #ccc; }
 
 .products {
-
   max-width: 1300px;
-
   margin: auto;
-
   padding: 20px;
-
 }
-
-
 
 .product-group {
-
   display: grid;
-
   grid-template-columns: repeat(auto-fit, minmax(230px,1fr));
-
   gap: 25px;
-
   margin-bottom: 40px;
-
 }
-
-
 
 .card {
-
   background: #111;
-
   padding: 15px;
-
   border-radius: 20px;
-
   text-align: center;
-
   transition: .4s;
-
   box-shadow: 0 0 20px rgba(255,215,0,0.2);
-
 }
-
-
 
 .card img {
-
   width: 100%;
-
   height: 200px;
-
   object-fit: cover;
-
   border-radius: 15px;
-
 }
 
-
-
-.card h3 {
-
-  color: gold;
-
-}
-
-
+.card h3 { color: gold; }
 
 .card .btn {
-
   margin-top: 10px;
-
   padding: 10px 15px;
-
   background: gold;
-
   color: black;
-
   border-radius: 10px;
-
   text-decoration: none;
-
-  display: inline-block;
-
   font-weight: bold;
-
+  display: inline-block;
 }
-
-
 
 .card:hover {
-
   transform: translateY(-10px);
-
   box-shadow: 0 0 40px gold;
-
 }
-
 /* ===== PRODUCTS END ===== */
 
 
-
-
 /* ===== VIDEOS START ===== */
-
 .video-group {
-
   display: flex;
-
   justify-content: center;
-
   gap: 30px;
-
   flex-wrap: wrap;
-
 }
-
-
-
-.video-card {
-
-  text-align: center;
-
-}
-
-
 
 .video-card video {
-
   width: 100%;
-
   max-width: 280px;
-
   border-radius: 20px;
-
   border: 2px solid gold;
-
   box-shadow: 0 0 20px gold;
-
 }
 
-
-
-.video-card p {
-
-  color: gold;
-
-}
-
+.video-card p { color: gold; }
 /* ===== VIDEOS END ===== */
 
 
+/* ===== FEATURED PRODUCTS / SLIDER START ===== */
+.featured-products {
+  text-align: center;
+  padding: 40px 20px;
+  background: rgba(255,215,0,0.05);
+}
+
+.featured-products h2 {
+  font-size: 36px;
+  color: gold;
+  margin-bottom: 10px;
+}
+
+.featured-products p {
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+.slider {
+  display: flex;
+  gap: 25px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 10px;
+
+  /* إخفاء Scrollbar */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.slider::-webkit-scrollbar { display: none; }
+
+.slider-card {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  background: #111;
+  padding: 15px;
+  border-radius: 15px;
+  text-align: center;
+  width: 250px;
+  transition: 0.3s;
+}
+
+.slider-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.slider-card h3 {
+  color: gold;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.shop-btn {
+  display: inline-block;
+  padding: 8px 15px;
+  background: gold;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.shop-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px gold;
+}
+
+.slider-card:hover { transform: scale(1.05); }
+/* ===== FEATURED PRODUCTS / SLIDER END ===== */
 
 
 /* ===== FOOTER START ===== */
-
 .footer {
-
   text-align: center;
-
   padding: 20px;
-
   background: #111;
-
   color: gold;
-
   margin-top: 50px;
-
 }
-
 /* ===== FOOTER END ===== */
 
 
-
-
 /* ===== ANIMATION START ===== */
-
 .fade-in {
-
   opacity: 0;
-
   transform: translateY(20px);
-
   animation: fadeInUp 0.8s ease forwards;
-
 }
-
-
 
 @keyframes fadeInUp {
-
   to {
-
     opacity: 1;
-
     transform: translateY(0);
-
   }
-
 }
-
 /* ===== ANIMATION END ===== */
 
 
-
-
 /* ===== MOBILE START ===== */
-
 @media (max-width: 768px) {
 
-  .overlay-text h1 {
-
-   font-size: 40px;
-
-  }
+  .overlay-text h1 { font-size: 40px; }
 
   .product-group {
-
-   grid-template-columns: repeat(2,1fr);
-
-   gap: 15px;
-
+    grid-template-columns: repeat(2,1fr);
+    gap: 15px;
   }
 
-  .card {
+  .card { padding: 10px; }
+  .card img { height: 140px; }
 
-   padding: 10px;
-
-  }
-
-  .card img {
-
-   height: 140px;
-
-  }
-
+  .slider-card { width: 45%; }
 }
-
-
 
 @media (max-width: 480px) {
 
-  .overlay-text h1 {
+  .overlay-text h1 { font-size: 30px; }
 
-   font-size: 30px;
+  .card img { height: 120px; }
 
-  }
-
-  .product-group {
-
-   grid-template-columns: repeat(2,1fr);
-
-  }
-
-  .card img {
-
-   height: 120px;
-
-  }
-
+  .slider-card { width: 90%; }
 }
-
 /* ===== MOBILE END ===== */
